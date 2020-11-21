@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/dialect">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login or Signup</title>
+    <link rel="stylesheet" href="/css/login-design.css" th:href="@{/css/login-design.css}">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <p th:if="${loginError}" class="error">Wrong user name and/or password</p>
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Sign In </h2>
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="/image/user-icon.png" th:src="@{/image/user-icon.png}" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form th:action="@{/login}" th:method="POST">
+            <input type="text" id="login" class="fadeIn second" name="username" placeholder="User Name" autofocus="autofocus">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <p>New User? </p><a class="underlineHover" href="/register/showRegistrationForm">Sign UP</a>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

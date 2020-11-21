@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/dialect">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<p th:if="${loginError}" class="error">Wrong user or password</p>
+<form th:action="@{/login}" th:method="post">
+    <p>User Name: </p>
+    <input type="text" name="username" placeholder="User Name"/>
+    <p>Password: </p>
+    <input type="password" name="password" placeholder="User Pass"/>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
