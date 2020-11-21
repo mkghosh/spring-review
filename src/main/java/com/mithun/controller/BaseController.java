@@ -39,6 +39,11 @@ public class BaseController {
         return "/error/403";
     }
     
+    @GetMapping("/401")
+    public String error401() {
+        return "/error/401";
+    }
+      
     @GetMapping("/error")
     public String error() {
         return "error";
