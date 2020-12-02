@@ -33,11 +33,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements A
 	
 	private ApplicationContext context;
 	
-	@Autowired
-	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+//	@Autowired
+//	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
-	@Autowired
-	private JwtRequestFilter jwtRequestFilter;
+//	@Autowired
+//	private JwtRequestFilter jwtRequestFilter;
 	@Autowired
 	private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 	@Autowired
@@ -85,11 +85,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements A
 					.headers().frameOptions().disable()
 				.and()
 					.csrf().disable().exceptionHandling()
-					.authenticationEntryPoint(jwtAuthenticationEntryPoint)
+//					.authenticationEntryPoint(jwtAuthenticationEntryPoint)
 					.accessDeniedHandler(accessDeniedHandler)
 				.and().sessionManagement()
 					.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+//		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
 	}
 
